@@ -1,0 +1,25 @@
+{
+  "name": "YT Download Button",
+  "version": "1.0",
+  "description": "Browser extension that replaces the download button under youtube videos with a button that actually downloads the video. No Youtube Premium needed.",
+  "permissions": ["scripting", "activeTab", "storage", "downloads", "contextMenus", "windows", "management", "nativeMessaging"],
+  "manifest_version": 3,
+  "action": {
+    "default_title": "YT Download Button",
+    "default_popup": "popup.html",
+    "default_icon": "/icons/icon128.png"
+  },
+	"icons": {
+		"16": "/icons/icon16.png",
+		"48": "/icons/icon48.png",
+		"128": "/icons/icon128.png"
+    },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["yt_content.js"],
+      "run_at": "document_idle"
+    }
+   
+  ]
+}
