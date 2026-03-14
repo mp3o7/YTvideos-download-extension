@@ -3,7 +3,7 @@ const YT_DL_MENU_SELECTOR = 'tp-yt-paper-dialog[role="dialog"][tabindex="-1"][pr
 
 const observer = new MutationObserver(() => {
     const yt_menu = document.querySelector(YT_DL_MENU_SELECTOR);
-    if (yt_menu && yt_menu.style.display !== 'none') {
+    if (yt_menu && yt_menu.style.display !== 'none' && yt_menu.querySelector('ytd-offline-promo-renderer.style-scope.ytd-popup-container')) {
         yt_menu.style.display = 'none';
         create_popup();
     }
